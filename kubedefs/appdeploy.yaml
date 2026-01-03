@@ -25,6 +25,7 @@ spec:
           image: busybox
           args:
             [
+              "sh",
               "-c",
               "until nslookup vprodb.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for mydb; sleep 2; done;",
             ]
@@ -32,6 +33,7 @@ spec:
           image: busybox
           args:
             [
+              "sh",
               "-c",
               "until nslookup vprocache01.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for mydb; sleep 2; done;",
             ]
@@ -39,6 +41,7 @@ spec:
           image: busybox
           args:
             [
+              "sh",
               "-c",
               "until nslookup vpromq01.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for mydb; sleep 2; done;",
             ]
